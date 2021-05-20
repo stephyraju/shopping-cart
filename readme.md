@@ -1,6 +1,6 @@
 e-commerce website project
 
-Deployment
+Deployment:
 The site was developed using the vscode IDE and uses git for version control and pushed to GitHub.
 
 To deploy dashboard to GitHub Pages from its GitHub repository, I followed these steps:
