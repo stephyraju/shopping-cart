@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    
+  <!-- Login Modal -->
+  <div class="modal fade" id="login_btn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form name ="Form" id="myForm" >
+                <div class="form-group modal-title">
+                    <label for="name">Username</label>
+                    <input type="text" class="form-control userID" id="name" placeholder="" name="name" required />
+                  <!-- <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control mailId" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"> -->
+                </div>
+                <div class="form-group modal-title">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control passId" id="exampleInputPassword1" name="password">
+                </div>
+                <br>
+                <button type="button" value ="Login" class="btn btn-dark" onclick="loginValidate(this.form)">Login</button>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- LOGO AND NAV BAR -->
+<header>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+    <!-- LOGO -->
+    <a class="navbar-brand mr-1" href="index.html">
+        <h3 class="heading">ArtGallery</h3>
+        <!-- <img src="" height="40" alt="logo" title="logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV BAR LINKS -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn" href="" data-toggle="modal" data-target="#login_btn">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</header>
+
+<!---ADDITIONAL MESSAGES -->
+
+<div class="container mt-5" id ="message" >
+    <h5 class="alert-heading text-center" id="loginstate"></h5>
+    <p class="mb-0"></p>
+  </div>
+
+<!--- CAROUSAL IMAGE SLIDER--->
+<br>
+<br>
+<br>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="container carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100 slide-image" src="images/slide1.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 slide-image" src="images/slide2.png" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 slide-image" src="images/slide3.png" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+<!-- MAIN CONTENT OF HOME PAGE -->
+<main>
+    <section class="container-fluid">
+        <div class="row justify-content-center my-5 text-center">
+            <div class="col-12">
+                <!-- <h2 class="mb-3">ART</h2> -->
+                <p class="text">Art has the power to transform, to illuminate, to educate, inspire and motivate</p>
+                <br>
+                <p class="text">My pencil drawings and oil paintings are made in full consultation with you, and will last for
+                    generations.</p>   
+            </div>
+
+        </div>
+    </section>
+    <!--- FEATURED CREATIONS -->
+    <section class ="projects">
+        <div class ="container">
+            <div class ="row">
+                <div class = "col-sm-12 col-md-3 featured">
+                    <h3>FEATURED CREATIONS</h3>
+                    <p>We take delight in delivering great products and services. </p>
+                    <p>Nothing is better than creating an emotional impact and make people go “Wow!”.</p>
+                <!-- BUTTON: VISIT GALLERY -->
+					<div class="row text-center">
+						<div class="col-12">
+							<a class="btn btn-lg btn-light mt-3 pr-5 mr-5" href="gallery.html">Visit Gallery</a>
+						</div>
+					</div>
+    
+                </div>
+                <!---- IMAGES ----->
+                <div class = "col-sm-12 col-md-9">
+                    <div class = "row">
+                        <div class = "col-sm-12 col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="images/night.png" alt="Card image cap">
+                            </div>
+                        </div>
+                        <div class = " col-sm-12 col-md-4">
+                            <div class="card">
+                                    <img class="card-img-top" src="images/rainwalk.png" alt="Card image cap">
+                            </div>
+                        </div>
+                        <div class = " col-sm-12 col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="images/moon.png" alt="Card image cap">
+                                </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>        
+</main>
+<br>
+
+<!-- FOOTER -->
+<footer class = "page-footer">
+    <div class ="container">
+        <div class ="row">
+            <div class="col-12">
+                <!-- SOCIAL ICONS/LINKS -->
+					<div class="mb-1 flex-centre text-center social-icon-shadow">
+						<a class="ic-fb" href="https://facebook.com/" target="_blank"
+							aria-label="Find me on Facebook" rel="noopener">
+							<i class="fab fa-facebook fa-lg mr-md-5 mr-3 fa-2x"></i>
+						</a>
+						<a class="ic-pin" href="https://pinterest.com/" target="_blank"
+							aria-label="Find me on Pinterest" rel="noopener">
+							<i class="fab fa-pinterest fa-lg mr-md-5 mr-3 fa-2x"></i>
+						</a>
+						<a class="ic-ins" href="https://instagram.com/" target="_blank"
+							aria-label="Find me on Instagram" rel="noopener">
+							<i class="fab fa-instagram fa-lg mr-md-5 mr-3 fa-2x"></i>
+						</a>
+						<a class="ic-twi" href="https://twitter.com/" target="_blank"
+							aria-label="Find me on Twitter" rel="noopener">
+							<i class="fab fa-twitter fa-lg mr-md-5 mr-3 fa-2x"></i>
+						</a>
+						
+					</div>
+
+                    <!-- COPYRIGHT -->
+					<div class="text-shadow text-center py-3">
+						<small>©<span id="year"></span> Copyright: ArtGallery all rights reserved</small>
+						<p class="mt-3">Website designed & developed by Stephy</p>
+					</div>
+            </div>
+        </div>
+    </div>
+    
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+
+
+<!---
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+---->
+</body>
+
+</html>
+
+
